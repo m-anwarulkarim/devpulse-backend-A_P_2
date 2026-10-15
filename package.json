@@ -1,7 +1,7 @@
 {
   "name": "devpulse-backend",
   "version": "1.0.0",
-  "description": "DevPulse - Internal Tech Issue & Feature Tracker API",
+  "description": "DevPulse Backend API",
   "main": "dist/server.js",
   "scripts": {
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
@@ -13,9 +13,7 @@
     "express",
     "typescript",
     "postgresql",
-    "raw-sql",
-    "jwt",
-    "issue-tracker"
+    "jwt"
   ],
   "author": "Anwarul Karim",
   "license": "ISC",

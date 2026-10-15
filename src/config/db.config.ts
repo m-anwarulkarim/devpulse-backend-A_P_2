@@ -23,21 +23,7 @@ export const initDB = async (): Promise<void> => {
       );
     `;
 
-    const createIssuesTableQuery = `
-      CREATE TABLE IF NOT EXISTS issues (
-        id SERIAL PRIMARY KEY,
-        title VARCHAR(150) NOT NULL,
-        description TEXT NOT NULL,
-        type VARCHAR(20) NOT NULL CHECK (type IN ('bug', 'feature_request')),
-        status VARCHAR(20) NOT NULL DEFAULT 'open' CHECK (status IN ('open', 'in_progress', 'resolved')),
-        reporter_id INTEGER NOT NULL,
-        created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-        updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
-      );
-    `;
-
     await pool.query(createUsersTableQuery);
-    await pool.query(createIssuesTableQuery);
 
     console.log("PostgreSQL database tables initialized successfully.");
   } catch (error) {

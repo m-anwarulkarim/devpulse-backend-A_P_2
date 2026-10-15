@@ -17,7 +17,7 @@ app.use("/api/auth", AuthRoutes);
 app.get("/", (req: Request, res: Response) => {
   res.json({
     success: true,
-    message: "Welcome to DevPulse API - Internal Tech Issue & Feature Tracker",
+    message: "Welcome to DevPulse API",
   });
 });
 
